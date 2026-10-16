@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "${id}",
+	"version": "${version}",
+	"name": "${name}",
+	"description": "Ender pearls, eggs, snowballs, signs, buckets and everything else that stacks to 16 now stacks to 64. Based on Why Stacks of 16? by LaidBackSloth.",
+	"authors": ["traelmyx"],
+	"contributors": ["LaidBackSloth (original mod)"],
+	"contact": {
+		"sources": "https://github.com/traelmyx/why-stacks-of-16-reborn",
+		"issues": "https://github.com/traelmyx/why-stacks-of-16-reborn/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/wso16/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.laidbacksloth.wso16.fabric.WhyStacksOf16Fabric"]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"fabric-api": "*",
+		"minecraft": "${mc_dep}",
+		"java": ">=${java}"
+	}
+}

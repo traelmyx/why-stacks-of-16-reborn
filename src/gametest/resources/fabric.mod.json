@@ -1,0 +1,14 @@
+{
+	"schemaVersion": 1,
+	"id": "${id}_gametest",
+	"version": "${version}",
+	"name": "Why Stacks of 16 GameTests",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": ["com.laidbacksloth.wso16.test.fabric.FabricGameTests"],
+		"client": ["com.laidbacksloth.wso16.test.fabric.FabricClientSmoke"]
+	},
+	"depends": {
+		"${id}": "*"
+	}
+}
