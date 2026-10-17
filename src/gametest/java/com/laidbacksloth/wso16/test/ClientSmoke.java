@@ -95,7 +95,7 @@ public final class ClientSmoke {
         server.execute(() -> {
             var player = server.getPlayerList().getPlayers().get(0);
             var items = new net.minecraft.world.item.Item[] {Items.ENDER_PEARL, Items.SNOWBALL, Items.EGG, Items.OAK_SIGN, Items.BUCKET,
-                Items.ARMOR_STAND, Items.RED_BANNER, Items.HONEY_BOTTLE, Items.SPRUCE_HANGING_SIGN};
+                Items.ARMOR_STAND, StackTests.item("red_banner"), Items.HONEY_BOTTLE, Items.SPRUCE_HANGING_SIGN};
             for (int i = 0; i < items.length; i++) {
                 player.getInventory().setItem(i, new ItemStack(items[i], 64));
             }

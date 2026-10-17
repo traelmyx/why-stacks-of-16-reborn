@@ -10,12 +10,17 @@ import net.minecraft.world.item.Items;
 import java.util.List;
 
 public final class StackTests {
+	/** A vanilla item by id path; some (like banners) became colour collections in 26.x. */
+	static Item item(String path) {
+		return BuiltInRegistries.ITEM.stream().filter(i -> BuiltInRegistries.ITEM.getKey(i).getPath().equals(path)).findFirst().orElseThrow();
+	}
+
 	private StackTests() {
 	}
 
 	public static void sixteensBecomeSixtyFour(GameTestHelper helper) {
 		for (Item item : List.of(Items.ENDER_PEARL, Items.EGG, Items.SNOWBALL, Items.OAK_SIGN, Items.CHERRY_HANGING_SIGN,
-				Items.BUCKET, Items.ARMOR_STAND, Items.WHITE_BANNER, Items.HONEY_BOTTLE, Items.WRITTEN_BOOK)) {
+				Items.BUCKET, Items.ARMOR_STAND, item("white_banner"), Items.HONEY_BOTTLE, Items.WRITTEN_BOOK)) {
 			helper.assertTrue(new ItemStack(item).getMaxStackSize() == 64, BuiltInRegistries.ITEM.getKey(item) + " stacks to " + new ItemStack(item).getMaxStackSize());
 		}
 		helper.succeed();

@@ -12,8 +12,14 @@ import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 public class WhyStacksOf16NeoForge {
 	public WhyStacksOf16NeoForge(IEventBus modBus) {
 		WhyStacksOf16.loadConfig(FMLPaths.CONFIGDIR.get());
+		//? if >=26 {
+		/*modBus.addListener((ModifyDefaultComponentsEvent event) ->
+			event.modifyMatching((item, components) -> WhyStacksOf16.shouldRaise(item, components.getOrDefault(DataComponents.MAX_STACK_SIZE, 1)),
+				(builder, registries, item) -> builder.set(DataComponents.MAX_STACK_SIZE, WhyStacksOf16.config.stackSize)));
+		*///?} else {
 		modBus.addListener((ModifyDefaultComponentsEvent event) ->
 			event.modifyMatching(WhyStacksOf16::shouldRaise, builder -> builder.set(DataComponents.MAX_STACK_SIZE, WhyStacksOf16.config.stackSize)));
+		//?}
 	}
 }
 //?}

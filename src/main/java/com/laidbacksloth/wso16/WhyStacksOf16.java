@@ -52,7 +52,11 @@ public final class WhyStacksOf16 {
 
 	/** Whether this item's default stack size should be raised. */
 	public static boolean shouldRaise(Item item) {
-		return item.components().getOrDefault(DataComponents.MAX_STACK_SIZE, 1) == 16
-			&& !config.exclude.contains(BuiltInRegistries.ITEM.getKey(item).toString());
+		return shouldRaise(item, item.components().getOrDefault(DataComponents.MAX_STACK_SIZE, 1));
+	}
+
+	/** Same, for loaders that hand over the item's components separately (NeoForge on 26.x). */
+	public static boolean shouldRaise(Item item, int currentMaxStackSize) {
+		return currentMaxStackSize == 16 && !config.exclude.contains(BuiltInRegistries.ITEM.getKey(item).toString());
 	}
 }
